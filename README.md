@@ -12,6 +12,24 @@ The controls we want in this chromecast controller/remote:
 
 For now this is not finished but we appreciate any help that can be given. So don't be afraid to make a PR!
 
+How to start
+========
+
+it's very simple just do:
+
+```
+npm install
+```
+then
+```
+grunt
+```
+
+and last
+```
+node server.js
+```
+
 This project is licensed under the MIT license because it would be mean to keep this for our selfs :)
 
 Current contributors:
