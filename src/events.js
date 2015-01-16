@@ -26,6 +26,7 @@ function initializeCastApi() {
  * initialization success callback
  */
 function onInitSuccess() {
+  castButton.style.display = 'inline';
   appendMessage("onInitSuccess");
 }
 
@@ -140,20 +141,6 @@ function transcribe(words) {
   sendMessage(words);
 }
 
-$(document).ready(function(){
-  //The type of event we are gonna listen to.
-  var clickEvent = 'click';
-  var arrowKeys = document.getElementsByClassName('arrow');
 
-  function handleArrowKey(e){
-    alert('We got: ' + e.target.id);
-    //console.log('arrow.' + e.target.id);
-    //sendMessage('arrow.' + e.target.id);
-  }
 
-  //Attach each element to a listener
-  for (var i = arrowKeys.length - 1; i >= 0; i--) {
-    arrowKeys[i].addEventListener(clickEvent, handleArrowKey, false);
-  }
-});
 

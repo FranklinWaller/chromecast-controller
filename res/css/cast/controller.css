@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	color:white;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
 }
@@ -68,4 +67,8 @@ html,body {
 	left:30%;
 	background-color: orange;
 	position: relative;
+}
+
+#cast {
+	display: none;
 }

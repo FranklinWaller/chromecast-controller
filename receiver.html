@@ -27,31 +27,36 @@ limitations under the License.
 	    border:0px solid silver;
 	    display: table-cell;
 	    vertical-align:middle;
-	    color:#FFFFFF;
+	    color:white;
 	    background-color:#252525;
 	    font-weight:bold;
 	    font-family:Verdana, Geneva, sans-serif;
 	    font-size:40px;
-		display:none;
 	}
+
+  .mouse {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: blue;
+    z-index: 9001;
+  }
 	
-	iframe {
-		height:720PX;
-	    width:1280PX;
-	    text-align:center;
-	    border:0px solid silver;
-	    display: table-cell;
-	    vertical-align:middle;
-	}
     </style>
     <title>Cast Hello Text</title>
   </head>
   <body>
+    <div class="mouse" id="mouse"></div>
+
+
 	<DIV id="message">Talk to me</DIV>
-	<iframe src="https://webplayed.com/apps/hexgl/index.html">
-	
-	</iframe>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+
+
+
     <script type="text/javascript">
       window.onload = function() {
         cast.receiver.logger.setLevelValue(0);
@@ -103,13 +108,81 @@ limitations under the License.
         window.castReceiverManager.start({statusText: "Application is starting"});
         console.log('Receiver Manager started');
       };
+
+      var mouse = document.getElementById('mouse');
+      var mouseSpeed = 4;
       
       // utility function to display the text message in the input field
       function displayText(text) {
+
+        alert(text);
         console.log(text);
         document.getElementById("message").innerHTML=text;
         window.castReceiverManager.setApplicationState(text);
+
+        switch(text){
+          case 'right':
+            console.log(mouse);
+            var left = mouse.style.left.replace('px', '');
+            left = parseInt(left);
+
+            if(isNaN(left)){
+              left = 0;
+            }
+
+            left += mouseSpeed;
+            mouse.style.left = left + 'px';
+            
+            break;
+          case 'down':
+            var bottom = mouse.style.top.replace('px', '');
+          bottom = parseInt(bottom);
+
+          if(isNaN(bottom)){
+            bottom = 0;
+          }
+
+          bottom += mouseSpeed;
+          mouse.style.top = bottom + 'px';
+          break;
+          case 'left':
+          var left = mouse.style.left.replace('px', '');
+          left = parseInt(left);
+
+          if(isNaN(left)){
+            left = 0;
+          }
+
+          left -= mouseSpeed;
+          mouse.style.left = left + 'px';
+          break;
+          case 'up':
+          var top = mouse.style.top.replace('px', '');
+          top = parseInt(top);
+
+          if(isNaN(top)){
+            top = 0;
+          }
+
+          top -= mouseSpeed;
+          mouse.style.top = top + 'px';
+          break;
+        }
+
+        
       };
+    </script>
+
+    <script type="text/javascript">
+    
+
+    function onKeyDown(e){
+      var keyCode = event.keyCode;
+      mouse.style['background-color'] = 'red';
+    }
+
+    window.addEventListener("keydown", onKeyDown, false);
+
     </script>
   </body>
 </html>
