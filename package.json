@@ -1,0 +1,33 @@
+{
+  "name": "chromecast-controller",
+  "version": "1.0.0",
+  "description": "Control your chromecast",
+  "main": "server.js",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://FranklinWaller@github.com/FranklinWaller/chromecast-controller.git"
+  },
+  "keywords": [
+    "chromecast",
+    "remote",
+    "controller",
+    "phone"
+  ],
+  "devDependencies": {
+    "connect": "*",
+    "serve-static": "*",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0"
+  },
+  "author": "Franklin Waller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FranklinWaller/chromecast-controller/issues"
+  },
+  "homepage": "https://github.com/FranklinWaller/chromecast-controller"
+}
