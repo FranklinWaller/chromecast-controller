@@ -22,13 +22,24 @@ module.exports = function(grunt) {
         src: 'src/*.js',
         dest: 'build/<%= pkg.name %>.min.js'
       }
+    },
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed'
+        }
+      },
+      files: {
+        'build/<%= pkg.name %>.min.css': 'sass/main.scss',
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'uglify','sass']);
 
 };

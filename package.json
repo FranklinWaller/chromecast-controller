@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Control your chromecast",
   "main": "server.js",
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://FranklinWaller@github.com/FranklinWaller/chromecast-controller.git"
@@ -18,11 +16,12 @@
   ],
   "devDependencies": {
     "connect": "*",
-    "serve-static": "*",
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-uglify": "~0.5.0"
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "serve-static": "*"
   },
   "author": "Franklin Waller",
   "license": "MIT",

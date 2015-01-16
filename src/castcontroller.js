@@ -20,7 +20,7 @@ function initializeCastApi() {
     receiverListener);
 
   chrome.cast.initialize(apiConfig, onInitSuccess, onError);
-};
+}
 
 /**
  * initialization success callback
@@ -70,7 +70,7 @@ function sessionUpdateListener(isAlive) {
   if (!isAlive) {
     session = null;
   }
-};
+}
 
 /**
  * utility function to log messages from the receiver
@@ -79,7 +79,7 @@ function sessionUpdateListener(isAlive) {
  */
 function receiverMessage(namespace, message) {
   appendMessage("receiverMessage: "+namespace+", "+message);
-};
+}
 
 /**
  * receiver listener during initialization
@@ -106,7 +106,7 @@ function stopApp() {
  * @param {string} message A message string
  */
 function sendMessage(message) {
-  if (session!=null) {
+  if (session!==null) {
     session.sendMessage(namespace, message, onSuccess.bind(this, "Message sent: " + message), onError);
   }
   else {
@@ -123,7 +123,7 @@ function sendMessage(message) {
  */
 function appendMessage(message) {
   console.log(message);
-};
+}
 
 /**
  * utility function to handle text typed in by user in the input field
@@ -153,7 +153,7 @@ $(document).ready(function(){
 
   //Attach each element to a listener
   for (var i = arrowKeys.length - 1; i >= 0; i--) {
-    arrowKeys[i].addEventListener(clickEvent, handleArrowKey, false);;
-  };
+    arrowKeys[i].addEventListener(clickEvent, handleArrowKey, false);
+  }
 });
 
