@@ -142,17 +142,18 @@ function transcribe(words) {
 
 $(document).ready(function(){
   //The type of event we are gonna listen to.
-var clickEvent = 'click';
-var arrowKeys = document.getElementsByClassName('arrow');
+  var clickEvent = 'click';
+  var arrowKeys = document.getElementsByClassName('arrow');
 
-function handleArrowKey(e){
-  console.log('arrow.' + e.target.id);
-  sendMessage('arrow.' + e.target.id);
-}
+  function handleArrowKey(e){
+    alert('We got: ' + e.target.id);
+    //console.log('arrow.' + e.target.id);
+    //sendMessage('arrow.' + e.target.id);
+  }
 
-//Attach each element to a listener
-for (var i = arrowKeys.length - 1; i >= 0; i--) {
-  arrowKeys[i].addEventListener(clickEvent, handleArrowKey, false);;
-};
+  //Attach each element to a listener
+  for (var i = arrowKeys.length - 1; i >= 0; i--) {
+    arrowKeys[i].addEventListener(clickEvent, handleArrowKey, false);;
+  };
 });
 
